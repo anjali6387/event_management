@@ -2,10 +2,10 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { connectDB } from "./lib/db.js";
-import UserRoute from "./routes/user.route.js";
-import EventRoute from "./routes/event.route.js";
-import { app,server } from "./lib/socket.js";
+import { connectDB } from "./src/lib/db.js";
+import UserRoute from "./src/routes/user.route.js";
+import EventRoute from "./src/routes/event.route.js";
+import { app,server } from "./src/lib/socket.js";
 import path from "path";
 
 
@@ -18,7 +18,7 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use(cookieParser());
 // app.use(cors({origin: "http://localhost:5173/",credentials: true}));
-const allowedOrigins = ['http://localhost:5173'];
+const allowedOrigins = ['http://localhost:5173','https://event-management-ebon-zeta.vercel.app/'];
 app.use(cors({
   origin: allowedOrigins, // Frontend origin
   credentials: true, // Allow cookies and headers
