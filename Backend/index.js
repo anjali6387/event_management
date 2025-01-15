@@ -21,6 +21,7 @@ app.use(cookieParser());
 const allowedOrigins = ['http://localhost:5173','https://event-management-ebon-zeta.vercel.app/'];
 app.use(cors({
   origin: allowedOrigins, // Frontend origin
+   methods: ["GET", "POST","PUT","DELETE"],
   credentials: true, // Allow cookies and headers
 }));
 
