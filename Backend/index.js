@@ -25,13 +25,19 @@ app.use(cookieParser());
 //   credentials: true, // Allow cookies and headers
 // }));
 
-app.use(cors({
-  origin: '*', // Allow all origins
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allow custom headers
-  credentials: true, // Include credentials
-}));
+// app.use(cors({
+//   origin: '*', // Allow all origins
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
+//   allowedHeaders: ['Content-Type', 'Authorization'], // Allow custom headers
+//   credentials: true, // Include credentials
+// }));
 
+
+app.use(cors({
+  origin: ['https://event-management-ebon-zeta.vercel.app'], // Frontend origin
+  methods: ["GET", "POST","PUT","DELETE"], 
+  credentials: true, 
+}));
 
 
 app.use("/api/user", UserRoute);
