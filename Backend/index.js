@@ -34,7 +34,7 @@ app.use(cookieParser());
 
 
 app.use(cors({
-  origin: ['https://event-management-ebon-zeta.vercel.app'], // Frontend origin
+  origin: true, // Frontend origin
   methods: ["GET", "POST","PUT","DELETE"], 
   credentials: true, 
 }));
