@@ -8,9 +8,9 @@ const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
         // origin: "http://localhost:5173", // Frontend URL
-         origin: '*', // Frontend URL
+        origin: ['https://event-management-ebon-zeta.vercel.app'], // Frontend URL
         methods: ["GET", "POST"], // Allowed methods
-        credentials: true, // Allow cookies and headers
+    
       },
 });
 
